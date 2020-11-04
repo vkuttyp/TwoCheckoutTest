@@ -32,8 +32,8 @@ namespace WebAPI.Controllers
         }
         private async Task<HttpResponseMessage> ttt(string token)
         {
-            string sellerId = "250538457371";
-            string secretKey = "O)FzpDAa[iJIxh1%@9]Q";
+            string sellerId = "";
+            string secretKey = "";
             string date = DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss");
             string text = $"{sellerId.Length}{sellerId}{date.Length}{date}";
             string hash = CreateMD5Hash(text, secretKey);
