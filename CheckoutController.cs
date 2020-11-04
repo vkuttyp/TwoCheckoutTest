@@ -15,12 +15,12 @@ namespace WebAPI.Controllers
     public class TwoCheckoutController: ControllerBase
     {
         [HttpPost]
-        public async Task<ActionResult> Checkout()
+        public async Task<ActionResult> Checkout([FromBody] TToken token)
         {
-            string token = "328aad05-1201-40d1-a275-606f78a2af01";
+            //string token = "328aad05-1201-40d1-a275-606f78a2af01";
             try
             {
-               var result= await GetResponse(token);
+               var result= await ttt(token.Token);
                 return Ok(result);
             }
             catch (Exception ex)
@@ -30,7 +30,7 @@ namespace WebAPI.Controllers
 
            
         }
-        private async Task<HttpResponseMessage> GetResponse(string token)
+        private async Task<HttpResponseMessage> ttt(string token)
         {
             string sellerId = "250538457371";
             string secretKey = "O)FzpDAa[iJIxh1%@9]Q";
